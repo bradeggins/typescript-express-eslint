@@ -1,12 +1,12 @@
-import express, { Request, Response } from 'express'
+import express, { Request, Response } from "express";
 
-const app: express.Application = express()
+const app: express.Application = express();
 
-app.set("port", process.env.PORT || 3000)
-app.use(express.json())
+app.set("port", process.env.PORT || 3000);
+app.use(express.json());
 
-app.get('/', (req: Request, res: Response) => {
-  res.send('Hello World Express + TypeScript + Linting')
-})
+app.get("/", (req: Request, res: Response) => {
+  res.send("Hello World Express + TypeScript + Linting");
+});
 
-export default app
+export default app;
