@@ -16,10 +16,10 @@ var appLog = {
     data: Math.random()
 };
 setInterval(function () {
-    process.stdout.write(JSON.stringify(apiLog, null, 4));
+    console.log('%O', apiLog);
 }, 30000);
 setInterval(function () {
-    process.stdout.write(JSON.stringify(appLog, null, 4));
+    console.log('%O', appLog);
 }, 60000);
 exports.default = server;
 //# sourceMappingURL=server.js.map

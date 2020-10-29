@@ -30,12 +30,12 @@ const appLog: App = {
 
 
 setInterval(() => {
-  process.stdout.write(JSON.stringify(apiLog, null, 4))
+  console.log('%O', apiLog)
 }, 30000);
 
 
 setInterval(() => {
-  process.stdout.write(JSON.stringify(appLog, null, 4))
+  console.log('%O', appLog)
 }, 60000);
 
 
