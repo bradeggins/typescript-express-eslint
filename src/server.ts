@@ -1,4 +1,3 @@
-import morgan from "morgan";
 import app from "./app";
 
 const server = app.listen(app.get("port"), () => {
@@ -10,14 +9,36 @@ const server = app.listen(app.get("port"), () => {
 });
 
 type Api = {
-  endpoint: string,
+  api: string,
+  data: number
 }
 
-const calls: Api = {
-  endpoint: '/v1/aura/test'
+type App = {
+  app: string,
+  data: number
 }
+
+const apiLog: Api = {
+  api: 'Api logging test',
+  data: Math.random()
+}
+
+const appLog: App = {
+  app: 'App logging test',
+  data: Math.random()
+}
+
+
 setInterval(() => {
-  process.stdout.write(JSON.stringify(calls, null, 4))
+  process.stdout.write(JSON.stringify(apiLog, null, 4))
 }, 30000);
+
+
+setInterval(() => {
+  process.stdout.write(JSON.stringify(appLog, null, 4))
+}, 60000);
+
+
+
 
 export default server;

@@ -7,11 +7,19 @@ var app_1 = __importDefault(require("./app"));
 var server = app_1.default.listen(app_1.default.get("port"), function () {
     console.log("App is listening on http://localhost:%d in %s mode", app_1.default.get("port"), app_1.default.get("env"));
 });
-var calls = {
-    endpoint: '/v1/aura/test'
+var apiLog = {
+    api: 'Api logging test',
+    data: Math.random()
+};
+var appLog = {
+    app: 'App logging test',
+    data: Math.random()
 };
 setInterval(function () {
-    process.stdout.write(JSON.stringify(calls, null, 4));
+    process.stdout.write(JSON.stringify(apiLog, null, 4));
 }, 30000);
+setInterval(function () {
+    process.stdout.write(JSON.stringify(appLog, null, 4));
+}, 60000);
 exports.default = server;
 //# sourceMappingURL=server.js.map
